@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), ZCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //doGet()
-        ZNetUtil.post("http://119.1.224.184:8090/newlovenote/getnotelis","{\"uid\":\"4\"}",this)
+        ZNetUtil.post("http://119.1.224.184:8090/newlovenote/getnotelist","{\"uid\":\"4\"}",this)
 
 
 
