@@ -22,8 +22,8 @@ class ZNetUtil {
                 var urlConnection = url.openConnection() as HttpURLConnection
                 try {
                     urlConnection.requestMethod = "GET"
-                    urlConnection.setDoOutput(true);
-                    urlConnection.setChunkedStreamingMode(0)
+//                    urlConnection.setDoOutput(true);
+//                    urlConnection.setChunkedStreamingMode(0)
                     urlConnection.connect()
                     var resCode = urlConnection.responseCode
                     when (resCode) {

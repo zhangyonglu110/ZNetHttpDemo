@@ -24,8 +24,7 @@ class MainActivity : AppCompatActivity(), ZCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //doGet()
-        ZNetUtil.post("http://119.1.224.184:8090/newlovenote/getnotelist","{\"uid\":\"4\"}",this)
-
+        doGet()
 
 
 
@@ -35,17 +34,20 @@ class MainActivity : AppCompatActivity(), ZCallBack {
 
 
 
-        var url=URL("http://119.1.224.184:8090/newlovenote/getnotelist?uid=3")
+        var url=URL("http://119.1.224.184:8090/newlovenote/deleteNote?noteid=6")
 
         var urlConnection = url.openConnection() as HttpURLConnection
            try {
                urlConnection.requestMethod="GET"
-                urlConnection.setDoOutput(true);
-                urlConnection.setChunkedStreamingMode(0)
-                var out =BufferedOutputStream(urlConnection
-                        .getOutputStream())
+//                urlConnection.setDoOutput(true);
+//                urlConnection.setChunkedStreamingMode(0)
+//                var out =BufferedOutputStream(urlConnection
+//                        .getOutputStream())
                 urlConnection.connect()
-                //writeStream(out);
+                var code=urlConnection.responseCode
+               Log.i("sss","coder-------------->"+code)
+
+               //writeStream(out);
                 var inputStream = InputStreamReader(urlConnection.getInputStream())
                 var res=inputStream.readText()
 
